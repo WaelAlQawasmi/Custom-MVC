@@ -1,6 +1,11 @@
-# Custom MVC Framework Documentation
-## Introduction
-Welcome to the documentation for the Custom MVC (Model-View-Controller) framework. 
+# Ward MVC Framework 
+
+
+<p align="center">
+  <img src="logo.png" alt="Description of the image" width="100" >
+</p>
+
+Welcome to the documentation for Ward MVC  Framework , it is Custom MVC (Model-View-Controller) framework. 
 This framework is built with PHP and designed to provide a structured and modular approach to developing web applications.
  The following documentation will guide you through the key components, usage, and best practices for building web applications using this framework.
 ## 
@@ -25,15 +30,17 @@ Installation
 Configuration
 Architecture Overview
 
-* src/
-* |-- Controllers/
-* | |-- HomeController.php
-* |-- Models/
-* | |-- SampleModel.php
-* |-- Views/
-* | |-- home/
-* | |-- index.php
-* |-- Routes.php
+- **src**
+   - **app**
+   - **Controllers**
+   - **Models**
+   - **Framwork**
+      - Route.php
+ - **Views** 
+ - __index.php__
+
+- **README.md**
+
 
 Creating a Controller
 Defining Routes
