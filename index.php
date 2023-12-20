@@ -13,9 +13,12 @@ $scriptDirectory = dirname($_SERVER['SCRIPT_NAME']);
 $path = str_replace($scriptDirectory, '', $path);
 
 
+spl_autoload_register(function (string $className){
+   require("src/". str_replace('\\', '/', $className) . '.php');
+});
 
-require 'src/Router.php';
-$router= new Router();
+
+$router= new Framework\Router();
 $router->add('/prodacts',['controller' => 'prodacts', 'action' =>'index']);
 $router->add('/home/contactus',['controller' => 'home', 'action' =>'contactus']);
 $router->add('/',['controller' => 'home', 'action' =>'index']);
@@ -24,9 +27,9 @@ $pathParameters=$router->match($path);
 if (!$pathParameters)
    exit( '404 The Page Not Found');
 
-$controller=$pathParameters['controller'];
+$controller="App\Controllers\\".ucwords( $pathParameters['controller']);
 $action=$pathParameters['action'];
-require "src/Controllers/$controller.php";
-$controllerObject = new $controller();
 
+$controllerObject = new  $controller();
 $controllerObject->$action();
+ 

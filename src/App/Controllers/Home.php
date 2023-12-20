@@ -2,6 +2,7 @@
 /**
  * @author Wael Al Qawasmi <wael.alqwasmi@yahoo.com> 
  */
+namespace App\Controllers;
 class Home
 {
    public function index (){
