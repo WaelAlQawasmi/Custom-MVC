@@ -4,6 +4,9 @@
  * @copyright 2023 Wael Al Qawasmi
  * @author Wael Al Qawasmi <wael.alqwasmi@yahoo.com>
  */
+
+use Framework\Dispatcher;
+
 // to get path without query string
 $path= parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -23,13 +26,6 @@ $router->add('/prodacts',['controller' => 'prodacts', 'action' =>'index']);
 $router->add('/home/contactus',['controller' => 'home', 'action' =>'contactus']);
 $router->add('/',['controller' => 'home', 'action' =>'index']);
 
-$pathParameters=$router->match($path);
-if (!$pathParameters)
-   exit( '404 The Page Not Found');
-
-$controller="App\Controllers\\".ucwords( $pathParameters['controller']);
-$action=$pathParameters['action'];
-
-$controllerObject = new  $controller();
-$controllerObject->$action();
+$dispatcher= new Framework\Dispatcher($router);
+$dispatcher->handle($path);
  
