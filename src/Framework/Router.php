@@ -12,7 +12,6 @@ private  $routes;
 
    public function match(string $path) {
       $path = urldecode($path);
-      $path = trim($path, "/");
       foreach ($this->routes as $route) {
          if (strtolower($route['path']) == $path) {
             return $route['params'];

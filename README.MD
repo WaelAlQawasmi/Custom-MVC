@@ -36,6 +36,8 @@ Architecture Overview
    - **Models**
    - **Framwork**
       - Route.php
+      - Dispatcher.php
+      - Viewer.php
  - **Views** 
  - __index.php__
 
