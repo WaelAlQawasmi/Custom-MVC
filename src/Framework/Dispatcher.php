@@ -1,6 +1,8 @@
 <?php
 namespace Framework;
 use ReflectionMethod;
+use Framework\Viewer;
+use ReflectionClass;
 
 class Dispatcher {
    public $router;
@@ -16,9 +18,22 @@ class Dispatcher {
          exit( '404 The Page Not Found');
       $controller=$this->getController($pathParameters);
       $action=$this->getAction($pathParameters);
-      $controllerObject = new  $controller();
+      $reflecter = new ReflectionClass($controller);
+      $constructorParameters=$reflecter->getConstructor()->getParameters();
+      $depandancies= [];
+      if ($constructorParameters != null) {
+         foreach($constructorParameters as $parameter){
+            $type=(string) $parameter->getType();
+            $depandancies[]= new $type;
+
+
+         }
+      }
+
+      $controllerObject = new  $controller(...$depandancies);
       $args = $this->getActionArguments($controller, $action, $pathParameters);
       $controllerObject->$action(...$args);
+
    }
 
    private  function getController ($pathParameters)
