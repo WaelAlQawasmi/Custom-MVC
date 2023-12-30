@@ -17,20 +17,8 @@ class Dispatcher {
       if (!$pathParameters)
          exit( '404 The Page Not Found');
       $controller=$this->getController($pathParameters);
+      $controllerObject = $this->getObject($controller); 
       $action=$this->getAction($pathParameters);
-      $reflecter = new ReflectionClass($controller);
-      $constructorParameters=$reflecter->getConstructor()->getParameters();
-      $depandancies= [];
-      if ($constructorParameters != null) {
-         foreach($constructorParameters as $parameter){
-            $type=(string) $parameter->getType();
-            $depandancies[]= new $type;
-
-
-         }
-      }
-
-      $controllerObject = new  $controller(...$depandancies);
       $args = $this->getActionArguments($controller, $action, $pathParameters);
       $controllerObject->$action(...$args);
 
@@ -51,9 +39,23 @@ class Dispatcher {
       $action = $pathParameters["action"]; 
       $action = str_replace("-", "", ucwords(strtolower($action), "-"));
       return lcfirst($action);
- 
    }
 
+   private function getObject($className){
+      $reflecter = new ReflectionClass($className);
+      $constructor=$reflecter->getConstructor();
+      $depandancies= [];
+      if ($constructor === null) {
+         return new  $className;
+      }
+      foreach($constructor->getParameters() as $parameter){
+         $type=(string) $parameter->getType();
+         $depandancies[]=  $this->getObject($type);
+      }
+      $controllerObject = new  $className(...$depandancies);
+      return  $controllerObject;
+
+   }
 
    private function getActionArguments(string $controller, string $action, array $params): array
    {

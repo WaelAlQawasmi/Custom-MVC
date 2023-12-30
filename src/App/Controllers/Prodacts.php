@@ -13,9 +13,8 @@ class Prodacts {
   }
 
   public function index (){
-    $Prodact= new Prodact();
-    $Prodacts= $this->prodact->getData();
-    $this->viewer->render('Prodacts');
+    $Prodacts=$this->prodact->getData();
+    $this->viewer->render('Prodacts',['Prodacts'=>$Prodacts]);
   }
 
 }
