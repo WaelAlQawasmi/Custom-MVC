@@ -5,6 +5,7 @@
  * @author Wael Al Qawasmi <wael.alqwasmi@yahoo.com>
  */
 
+use Framework\Container;
 use Framework\Dispatcher;
 
 // to get path without query string
@@ -25,7 +26,7 @@ $router= new Framework\Router();
 $router->add('/prodacts',['controller' => 'prodacts', 'action' =>'index']);
 $router->add('/home/contactus',['controller' => 'home', 'action' =>'contactus']);
 $router->add('/',['controller' => 'home', 'action' =>'index']);
-
-$dispatcher= new Framework\Dispatcher($router);
+$Container= new Container;
+$dispatcher= new Framework\Dispatcher($router,$Container);
 $dispatcher->handle($path);
  

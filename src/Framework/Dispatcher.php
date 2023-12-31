@@ -1,14 +1,15 @@
 <?php
 namespace Framework;
 use ReflectionMethod;
-use Framework\Viewer;
-use ReflectionClass;
+
 
 class Dispatcher {
    public $router;
-   public function __construct( Router $router)
+   public $container;
+   public function __construct( Router $router, Container $container)
    {
       $this->router= $router;
+      $this->container= $container;
 
    }
 
@@ -17,7 +18,7 @@ class Dispatcher {
       if (!$pathParameters)
          exit( '404 The Page Not Found');
       $controller=$this->getController($pathParameters);
-      $controllerObject = $this->getObject($controller); 
+      $controllerObject = $this->container->get($controller); 
       $action=$this->getAction($pathParameters);
       $args = $this->getActionArguments($controller, $action, $pathParameters);
       $controllerObject->$action(...$args);
@@ -41,21 +42,6 @@ class Dispatcher {
       return lcfirst($action);
    }
 
-   private function getObject($className){
-      $reflecter = new ReflectionClass($className);
-      $constructor=$reflecter->getConstructor();
-      $depandancies= [];
-      if ($constructor === null) {
-         return new  $className;
-      }
-      foreach($constructor->getParameters() as $parameter){
-         $type=(string) $parameter->getType();
-         $depandancies[]=  $this->getObject($type);
-      }
-      $controllerObject = new  $className(...$depandancies);
-      return  $controllerObject;
-
-   }
 
    private function getActionArguments(string $controller, string $action, array $params): array
    {
