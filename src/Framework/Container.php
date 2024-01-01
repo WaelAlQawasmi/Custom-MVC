@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace Framework;
 
 use Closure;
+use Exception;
 use ReflectionClass;
 
 class Container {
@@ -22,9 +23,11 @@ class Container {
             return new  $className;
         }
         foreach($constructor->getParameters() as $parameter){
-            $type=(string) $parameter->getType();
+            $type=$parameter->getType();
+            if($type=== null)
+             throw new Exception ("Constructer parameter {$parameter->getName()} in the class $className class has no type declaration ");
 
-            $depandancies[]=  $this->get($type);
+            $depandancies[]=  $this->get((string) $type);
         }
         $controllerObject = new  $className(...$depandancies);
         return  $controllerObject;

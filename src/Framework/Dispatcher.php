@@ -1,5 +1,7 @@
 <?php
 namespace Framework;
+
+use Framework\Exceptions\PageNotFoundException;
 use ReflectionMethod;
 
 
@@ -16,7 +18,7 @@ class Dispatcher {
    public function handle($path){
       $pathParameters=$this->router->match($path);
       if (!$pathParameters)
-         exit( '404 The Page Not Found');
+         throw new PageNotFoundException("$path is not a valid");
       $controller=$this->getController($pathParameters);
       $controllerObject = $this->container->get($controller); 
       $action=$this->getAction($pathParameters);
