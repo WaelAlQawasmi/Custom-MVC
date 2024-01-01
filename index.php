@@ -5,6 +5,7 @@
  * @author Wael Al Qawasmi <wael.alqwasmi@yahoo.com>
  */
 
+use App\DataBase;
 use Framework\Container;
 use Framework\Dispatcher;
 
@@ -26,7 +27,11 @@ $router= new Framework\Router();
 $router->add('/prodacts',['controller' => 'prodacts', 'action' =>'index']);
 $router->add('/home/contactus',['controller' => 'home', 'action' =>'contactus']);
 $router->add('/',['controller' => 'home', 'action' =>'index']);
+
 $Container= new Container;
+$Container->set(App\DataBase::class,function (){
+   return new DataBase('localhost','company','root','');
+} );
 $dispatcher= new Framework\Dispatcher($router,$Container);
 $dispatcher->handle($path);
  
