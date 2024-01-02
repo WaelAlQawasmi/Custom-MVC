@@ -35,8 +35,11 @@ Architecture Overview
    - **Controllers**
    - **Models**
    - **Framwork**
+      - **Exeptions**
+        - PageNotFoundException.php
       - Route.php
       - Dispatcher.php
+      - Container.php
       - Viewer.php
  - **Views** 
  - __index.php__
