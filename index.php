@@ -8,7 +8,16 @@
 use App\DataBase;
 use Framework\Container;
 use Framework\Dispatcher;
+use Framework\Exceptions\ErrorHandler;
 use Framework\Exceptions\PageNotFoundException;
+
+
+
+spl_autoload_register(function (string $className){
+   require("src/". str_replace('\\', '/', $className) . '.php');
+});
+
+set_error_handler("Framework\Exceptions\ErrorHandler::handleError");
 
 set_exception_handler( function (Throwable $exception){
 
@@ -23,12 +32,13 @@ set_exception_handler( function (Throwable $exception){
          http_response_code(500);
          $template="error500.php";
       }
-
-   ini_set("display_errors",false);
+   $showError= false;
+   ini_set("display_errors",$showError);
+   if($showError){
+      require "./Views/$template";
+   }
    ini_set('log_errors',true);
    ini_set('error_log', './php_errors.log');
-   require "./Views/$template";
-
 });
 
 
@@ -43,10 +53,6 @@ $scriptDirectory = dirname($_SERVER['SCRIPT_NAME']);
 // Remove the script directory from the full URL
 $path = str_replace($scriptDirectory, '', $path);
 
-
-spl_autoload_register(function (string $className){
-   require("src/". str_replace('\\', '/', $className) . '.php');
-});
 
 
 $router= new Framework\Router();
