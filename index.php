@@ -8,38 +8,21 @@
 use App\DataBase;
 use Framework\Container;
 use Framework\Dispatcher;
-use Framework\Exceptions\ErrorHandler;
-use Framework\Exceptions\PageNotFoundException;
-
 
 
 spl_autoload_register(function (string $className){
    require("src/". str_replace('\\', '/', $className) . '.php');
 });
+require_once __DIR__ . '/vendor/autoload.php';
 
-set_error_handler("Framework\Exceptions\ErrorHandler::handleError");
+// Load environment variables from .env
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+ini_set("display_errors",$_ENV['SHOW_ERRORS']);
 
-set_exception_handler( function (Throwable $exception){
+//set_error_handler("Framework\Exceptions\ErrorHandler::handleError");
 
-   if($exception instanceof PageNotFoundException)
-      {
-         http_response_code(404);
-         $template="error404.php";
-      
-      }
-   else
-      {
-         http_response_code(500);
-         $template="error500.php";
-      }
-   $showError= false;
-   ini_set("display_errors",$showError);
-   if($showError){
-      require "./Views/$template";
-   }
-   ini_set('log_errors',true);
-   ini_set('error_log', './php_errors.log');
-});
+set_exception_handler("Framework\Exceptions\ErrorHandler::exeptionHandler");
 
 
 // to get path without query string
@@ -55,15 +38,11 @@ $path = str_replace($scriptDirectory, '', $path);
 
 
 
-$router= new Framework\Router();
-$router->add('/prodacts',['controller' => 'prodacts', 'action' =>'index']);
-$router->add('/home/contactus',['controller' => 'home', 'action' =>'contactus']);
-$router->add('/',['controller' => 'home', 'action' =>'index']);
 
-$Container= new Container;
-$Container->set(App\DataBase::class,function (){
-   return new DataBase('localhost','company','root','');
-} );
-$dispatcher= new Framework\Dispatcher($router,$Container);
+
+$router= require "config/routes.php";
+$Container= require "config/services.php";
+
+$dispatcher= new Dispatcher($router,$Container);
 $dispatcher->handle($path);
  
