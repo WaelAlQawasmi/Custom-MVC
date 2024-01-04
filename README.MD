@@ -36,6 +36,7 @@ Architecture Overview
    - **Models**
    - **Framwork**
       - **Exeptions**
+        - ErrorHandler.php
         - PageNotFoundException.php
       - Route.php
       - Dispatcher.php
