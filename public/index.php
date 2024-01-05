@@ -8,15 +8,16 @@
 use App\DataBase;
 use Framework\Container;
 use Framework\Dispatcher;
+define("ROOT_PATH", dirname(__DIR__));
 
 
 spl_autoload_register(function (string $className){
-   require("src/". str_replace('\\', '/', $className) . '.php');
+   require( ROOT_PATH . "/src/". str_replace('\\', '/', $className) . '.php');
 });
-require_once __DIR__ . '/vendor/autoload.php';
+require_once(__DIR__ . '/../vendor/autoload.php');
 
 // Load environment variables from .env
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 ini_set("display_errors",$_ENV['SHOW_ERRORS']);
 
@@ -36,13 +37,8 @@ $scriptDirectory = dirname($_SERVER['SCRIPT_NAME']);
 // Remove the script directory from the full URL
 $path = str_replace($scriptDirectory, '', $path);
 
-
-
-
-
-$router= require "config/routes.php";
-$Container= require "config/services.php";
+$router= require ROOT_PATH . "/config/routes.php";
+$Container= require  ROOT_PATH . "/config/services.php";
 
 $dispatcher= new Dispatcher($router,$Container);
 $dispatcher->handle($path);
- 

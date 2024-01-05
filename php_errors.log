@@ -1,5 +1,0 @@
-[01-Jan-2024 11:04:22 UTC] PHP Fatal error:  Uncaught Framework\Exceptions\PageNotFoundException: /home/contact-us is not a valid in C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php:21
-Stack trace:
-#0 C:\Apache\htdocs\CustomMVC\index.php(45): Framework\Dispatcher->handle('/home/contact-u...')
-#1 {main}
-  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php on line 21

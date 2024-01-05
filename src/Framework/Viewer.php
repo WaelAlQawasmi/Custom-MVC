@@ -4,6 +4,6 @@ class Viewer {
 
     public function render ( string $template, array $params=[]){
         extract($params, EXTR_SKIP);
-        require_once 'Views/'.$template.'.php';
+        require_once dirname(__DIR__, 2) . '/Views/'.$template.'.php';
     }
 }
