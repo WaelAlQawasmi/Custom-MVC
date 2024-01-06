@@ -22,8 +22,8 @@ class Dispatcher {
       $controller=$this->getController($pathParameters);
       $controllerObject = $this->container->get($controller); 
       $action=$this->getAction($pathParameters);
-      $args = $this->getActionArguments($controller, $action, $pathParameters);
-      $controllerObject->$action(...$args);
+      $args = $this->getActionArguments($controller, $action, $pathParameters);      
+      $controllerObject->$action(...array_values($args));
 
    }
 
@@ -47,12 +47,14 @@ class Dispatcher {
 
    private function getActionArguments(string $controller, string $action, array $params): array
    {
+      print_r($params);
       $args = [];
       $method = new ReflectionMethod($controller, $action);
        foreach ($method->getParameters() as $parameter) {
          $name = $parameter->getName();
          $args[$name] = $params[$name];
        }
+       print_r($args);
       return $args;
    }
 }
