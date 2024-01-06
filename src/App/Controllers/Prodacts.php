@@ -13,7 +13,7 @@ class Prodacts {
   }
 
   public function index (){
-    $Prodacts=$this->prodact->getData();
+    $Prodacts=$this->prodact->findAll();
     $this->viewer->render('Prodacts',['Prodacts'=>$Prodacts]);
   }
 
