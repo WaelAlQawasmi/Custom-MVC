@@ -12,9 +12,13 @@ class Prodacts {
     $this->prodact=$prodact;
   }
 
-  public function index (){
+  public function index ( ){
     $Prodacts=$this->prodact->findAll();
     $this->viewer->render('Prodacts',['Prodacts'=>$Prodacts]);
+  }
+  public function show (string $id){
+    $prodact=$this->prodact->find($id);
+    $this->viewer->render('Prodact',['prodact'=>$prodact]);
   }
 
 }

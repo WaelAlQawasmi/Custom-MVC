@@ -5,9 +5,7 @@
  * @author Wael Al Qawasmi <wael.alqwasmi@yahoo.com>
  */
 
-use App\DataBase;
-use Framework\Container;
-use Framework\Dispatcher;
+
 define("ROOT_PATH", dirname(__DIR__));
 
 
@@ -38,7 +36,8 @@ $scriptDirectory = dirname($_SERVER['SCRIPT_NAME']);
 $path = str_replace($scriptDirectory, '', $path);
 
 $router= require ROOT_PATH . "/config/routes.php";
-$Container= require  ROOT_PATH . "/config/services.php";
+$container= require  ROOT_PATH . "/config/services.php";
 
-$dispatcher= new Dispatcher($router,$Container);
+$dispatcher = new Framework\Dispatcher($router, $container);
+
 $dispatcher->handle($path);
