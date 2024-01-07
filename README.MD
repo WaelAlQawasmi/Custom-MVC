@@ -29,7 +29,11 @@ Getting Started
 Installation
 Configuration
 Architecture Overview
-
+- __config__
+  - routes.php
+  - services.php
+- __Public__
+  - index.php
 - **src**
    - **app**
    - **Controllers**
