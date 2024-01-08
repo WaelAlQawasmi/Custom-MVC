@@ -47,14 +47,12 @@ class Dispatcher {
 
    private function getActionArguments(string $controller, string $action, array $params): array
    {
-      print_r($params);
       $args = [];
       $method = new ReflectionMethod($controller, $action);
        foreach ($method->getParameters() as $parameter) {
          $name = $parameter->getName();
          $args[$name] = $params[$name];
        }
-       print_r($args);
       return $args;
    }
 }

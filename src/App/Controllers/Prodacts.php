@@ -20,5 +20,9 @@ class Prodacts {
     $prodact=$this->prodact->find($id);
     $this->viewer->render('Prodact',['prodact'=>$prodact]);
   }
+  public function new(){
+    $this->viewer->render('header',['titel'=>'new prodact']);
+    $this->viewer->render('new');
+  }
 
 }
