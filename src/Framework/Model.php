@@ -37,6 +37,9 @@ abstract class Model {
  }
 
  public function insert(array $data){
+    if(!$this->validation($data)){
+        return false;
+    }
     $columns = implode(', ', array_keys($data));
     $placeholder= implode(',', array_fill(0, count($data),"?"));
     $sql ="INSERT INTO {$this->getTableName()} ($columns) values ($placeholder);";
@@ -48,5 +51,9 @@ abstract class Model {
 
     }
     return $stmt->execute();
+ }
+
+ protected  function  validation(array $data){
+
  }
 }
