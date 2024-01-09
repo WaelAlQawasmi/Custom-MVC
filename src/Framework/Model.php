@@ -37,7 +37,8 @@ abstract class Model {
  }
 
  public function insert(array $data){
-    if(!$this->validation($data)){
+    $this->validation($data);
+    if(!empty($this->errors )){
         return false;
     }
     $columns = implode(', ', array_keys($data));
@@ -55,5 +56,20 @@ abstract class Model {
 
  protected  function  validation(array $data){
 
+ }
+
+ public function getLastInsertedId(){
+    $conn= $this->dataBase->getConnection();
+    return $conn->lastInsertId();
+
+ }
+
+ protected $errors=[];
+ protected function addErrors(string $field, string $message){
+   $this->errors[$field]=$message;
+
+ }
+ public function getErrors(){
+   return $this->errors;
  }
 }

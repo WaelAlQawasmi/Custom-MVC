@@ -27,7 +27,16 @@ class Prodacts {
 
   public function create(){
     $data=['name'=>$_POST['name']];
-    $this->prodact->insert($data);
+    if( $this->prodact->insert($data)){
+      header("Location: {$this->prodact->getLastInsertedId()}/show");
+      echo "data inserted successfully with ID {$this->prodact->getLastInsertedId()}";
+
+    }
+    else{
+      $this->viewer->render('header',['titel'=>'new prodact', 'errors'=>$this->prodact->getErrors()]);
+      $this->viewer->render('new');
+    }
+   ;
   }
 
 }

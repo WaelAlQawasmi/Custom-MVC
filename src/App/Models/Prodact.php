@@ -6,11 +6,12 @@ namespace App\Models;
 use Framework\Model;
 class Prodact extends Model {
   protected $tableName="products";
-  protected function validation (array $data){
-    if(empty($data['name']))
-      return false;
-    return true;
-
-
+  protected function validation (array $data):void
+  {
+    if(empty($data['name'])){
+      $this->addErrors('name',"this field is required");
+    }
   }
+
+
 }
