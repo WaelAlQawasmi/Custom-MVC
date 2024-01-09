@@ -34,7 +34,19 @@ abstract class Model {
    if(empty($data))
     throw  new PageNotFoundException ("id not fond");
     return  $data;
+ }
 
+ public function insert(array $data){
+    $columns = implode(', ', array_keys($data));
+    $placeholder= implode(',', array_fill(0, count($data),"?"));
+    $sql ="INSERT INTO {$this->getTableName()} ($columns) values ($placeholder);";
+    $conn= $this->dataBase->getConnection();
+    $stmt= $conn->prepare($sql);
+    $i=1;
+    foreach ($data as $value){
+        $stmt->bindParam($i++, $value);
 
+    }
+    return $stmt->execute();
  }
 }

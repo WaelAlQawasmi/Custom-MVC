@@ -5,5 +5,5 @@
 namespace App\Models;
 use Framework\Model;
 class Prodact extends Model {
-  protected $tableName="company";
+  protected $tableName="products";
 }

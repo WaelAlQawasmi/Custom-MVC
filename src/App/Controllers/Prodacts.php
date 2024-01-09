@@ -25,4 +25,9 @@ class Prodacts {
     $this->viewer->render('new');
   }
 
+  public function create(){
+    $data=['name'=>$_POST['name']];
+    $this->prodact->insert($data);
+  }
+
 }
