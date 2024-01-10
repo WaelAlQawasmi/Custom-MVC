@@ -9,6 +9,7 @@
   <h1>
     <?php 
    echo "<h1>$prodact[name]</h1>";
+   echo "<a href=\"$prodact[id]/edit/\"> edit </a>";
 
     ?>
 
