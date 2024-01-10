@@ -12,7 +12,9 @@ class Prodacts {
     $this->prodact=$prodact;
   }
 
-  public function index ( ){
+  public function index (){
+    $this->viewer->render('header',['titel'=>'new prodact']);
+
     $Prodacts=$this->prodact->findAll();
     $this->viewer->render('Prodacts',['Prodacts'=>$Prodacts]);
   }
@@ -36,7 +38,15 @@ class Prodacts {
       $this->viewer->render('header',['titel'=>'new prodact', 'errors'=>$this->prodact->getErrors()]);
       $this->viewer->render('new');
     }
-   ;
+   
+  }
+
+  public function edit(string $id){
+    $this->viewer->render('header',['titel'=>'new prodact']);
+    $prodact=$this->prodact->find($id);
+    $this->viewer->render('new',['prodact'=>$prodact]);
+
+
   }
 
 }
