@@ -40,7 +40,14 @@ class Prodacts {
     }
    
   }
+  public function update($id){
+    $prodact=$this->prodact->find($id);
+    $data=['name'=>$_POST['name']];
+    $prodact->update($id, $data);
+    echo "data update  successfully with ID {$id}";
 
+
+  }
   public function edit(string $id){
     $this->viewer->render('header',['titel'=>'new prodact']);
     $prodact=$this->prodact->find($id);
