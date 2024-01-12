@@ -11,7 +11,7 @@ class Router {
         ];
     }
 
-    public function match(string $path)
+    public function match(string $path , string $method)
     {
         $path = urldecode($path);
         
@@ -23,8 +23,13 @@ class Router {
             if (preg_match($pattern, $path, $matches)) {
 
                 $matches = array_filter($matches, "is_string", ARRAY_FILTER_USE_KEY);
+                if (!array_key_exists('method',$route ['params']))
+                $route ['params']['method']='GET';  
+
 
                 $params = array_merge($matches, $route["params"]);
+                if(strtolower($route ['params']['method']) != strtolower($method ))
+                    continue;
 
                 return $params;
             }

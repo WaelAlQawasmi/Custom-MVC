@@ -15,8 +15,8 @@ class Dispatcher {
 
    }
 
-   public function handle($path){
-      $pathParameters=$this->router->match($path);
+   public function handle($path, string $method){
+      $pathParameters=$this->router->match($path, $method);
       if (!$pathParameters)
          throw new PageNotFoundException("$path is not a valid");
       $controller=$this->getController($pathParameters);
