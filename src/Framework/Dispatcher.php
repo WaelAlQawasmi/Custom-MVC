@@ -3,7 +3,7 @@ namespace Framework;
 
 use Framework\Exceptions\PageNotFoundException;
 use ReflectionMethod;
-
+use UnexpectedValueException;
 
 class Dispatcher {
    public $router;
@@ -15,12 +15,17 @@ class Dispatcher {
 
    }
 
-   public function handle($path, string $method){
-      $pathParameters=$this->router->match($path, $method);
+   public function handle( Request $request){
+
+      $path=$this->getPath($request->uri);
+
+      $pathParameters=$this->router->match($path, $request->method);
       if (!$pathParameters)
          throw new PageNotFoundException("$path is not a valid");
       $controller=$this->getController($pathParameters);
-      $controllerObject = $this->container->get($controller); 
+      $controllerObject = $this->container->get($controller);
+      $controllerObject->setRequest( $request) ;
+      $controllerObject->setViewer( new Viewer()) ;
       $action=$this->getAction($pathParameters);
       $args = $this->getActionArguments($controller, $action, $pathParameters);      
       $controllerObject->$action(...array_values($args));
@@ -54,5 +59,17 @@ class Dispatcher {
          $args[$name] = $params[$name];
        }
       return $args;
+   }
+   private function getPath(string $uri){
+      // to get path without query string
+      $path= parse_url($uri, PHP_URL_PATH);
+      if ($path==false){
+         throw new UnexpectedValueException("error path {$uri}");
+      }
+      // Get the directory where the PHP script is located
+      $scriptDirectory = dirname($_SERVER['SCRIPT_NAME']);
+      // Remove the script directory from the full URL
+      $path = str_replace($scriptDirectory, '', $path);
+      return $path;
    }
 }

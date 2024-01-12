@@ -3,7 +3,10 @@
  * @author Wael Al Qawasmi <wael.alqwasmi@yahoo.com> 
  */
 namespace App\Controllers;
-class Home
+
+use Framework\controller;
+
+class Home extends controller
 {
    public function index (){
       echo 'index page';
