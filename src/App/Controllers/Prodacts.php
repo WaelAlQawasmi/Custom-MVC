@@ -2,13 +2,12 @@
 namespace App\Controllers;
 use App\Models\Prodact;
 use COM;
+use Framework\controller;
 use Framework\Viewer;
-class Prodacts {
-
-  private $viewer;
+class Prodacts extends controller {
+ 
   private $prodact;
-  public function  __construct( Viewer $viewer , Prodact $prodact ) {
-    $this->viewer=$viewer;
+  public function  __construct(  Prodact $prodact ) {
     $this->prodact=$prodact;
   }
 
@@ -28,7 +27,7 @@ class Prodacts {
   }
 
   public function create(){
-    $data=['name'=>$_POST['name']];
+    $data=['name'=>$this->request->post['name']];
     if( $this->prodact->insert($data)){
       header("Location: {$this->prodact->getLastInsertedId()}/show");
       echo "data inserted successfully with ID {$this->prodact->getLastInsertedId()}";
@@ -42,7 +41,7 @@ class Prodacts {
   }
   public function update(string $id){
     $prodact=$this->prodact->find($id);
-    $data=['name'=>$_POST['name']];
+    $data=['name'=>$this->request->post['name']];
     $this->prodact->update( $data ,$id);
     header("Location: show");
 

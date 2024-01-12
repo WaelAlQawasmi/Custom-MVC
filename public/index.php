@@ -7,8 +7,6 @@
 
 
 define("ROOT_PATH", dirname(__DIR__));
-
-
 spl_autoload_register(function (string $className){
    require( ROOT_PATH . "/src/". str_replace('\\', '/', $className) . '.php');
 });
@@ -24,20 +22,9 @@ ini_set("display_errors",$_ENV['SHOW_ERRORS']);
 set_exception_handler("Framework\Exceptions\ErrorHandler::exeptionHandler");
 
 
-// to get path without query string
-$path= parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-if ($path==false){
-  throw new UnexpectedValueException("error path {$_SERVER['REQUEST_URI']}");
-}
-
-// Get the directory where the PHP script is located
-$scriptDirectory = dirname($_SERVER['SCRIPT_NAME']);
-// Remove the script directory from the full URL
-$path = str_replace($scriptDirectory, '', $path);
-
 $router= require ROOT_PATH . "/config/routes.php";
 $container= require  ROOT_PATH . "/config/services.php";
 
 $dispatcher = new Framework\Dispatcher($router, $container);
-
-$dispatcher->handle($path,$_SERVER['REQUEST_METHOD']);
+$request=  Framework\Request::createGlobalForm();
+$dispatcher->handle($request);
