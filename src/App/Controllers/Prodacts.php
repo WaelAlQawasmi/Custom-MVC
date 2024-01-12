@@ -40,11 +40,11 @@ class Prodacts {
     }
    
   }
-  public function update($id){
+  public function update(string $id){
     $prodact=$this->prodact->find($id);
     $data=['name'=>$_POST['name']];
-    $prodact->update($id, $data);
-    echo "data update  successfully with ID {$id}";
+    $this->prodact->update( $data ,$id);
+    header("Location: show");
 
 
   }

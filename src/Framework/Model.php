@@ -54,6 +54,41 @@ abstract class Model {
     return $stmt->execute();
  }
 
+ public function update(array $data, string $id)
+ {
+    $this->validation($data);
+    if(!empty($this->errors )){
+        return false;
+    }
+    $sql=$this->prepareUpdateQuery($data);
+    $i=1;
+    $conn= $this->dataBase->getConnection();
+    $stmt= $conn->prepare($sql);
+    foreach ($data as $value){
+          $stmt->bindParam($i++, $value);
+  
+      }
+      $stmt->bindParam($i, $id);
+      
+      return $stmt->execute();
+ }
+
+ private function prepareUpdateQuery(array $data){
+    $colums=array_keys($data);
+    $sql = "update {$this->getTableName()} set ";
+    $index=1;
+    foreach ($colums as $colum ){
+        if ($index++==count($colums)){
+           $sql.= $colum."= ?  ";
+        }
+        else {
+           $sql.= $colum."= ? , ";
+        }
+      }
+      $sql.=" where id= ? ";
+      return $sql;
+ }
+
  protected  function  validation(array $data){
 
  }
