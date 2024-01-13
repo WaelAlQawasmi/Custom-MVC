@@ -1,6 +1,6 @@
 <?php
 namespace Framework;
-class Viewer {
+class PHPTemplateViewer implements TemplateViewerInterface {
 
     public function render ( string $template, array $params=[]){
         extract($params, EXTR_SKIP);

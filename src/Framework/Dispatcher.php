@@ -25,7 +25,7 @@ class Dispatcher {
       $controller=$this->getController($pathParameters);
       $controllerObject = $this->container->get($controller);
       $controllerObject->setRequest( $request) ;
-      $controllerObject->setViewer( new Viewer()) ;
+      $controllerObject->setViewer( $this->container->get(TemplateViewerInterface::class));
       $action=$this->getAction($pathParameters);
       $args = $this->getActionArguments($controller, $action, $pathParameters);      
       $controllerObject->$action(...array_values($args));
