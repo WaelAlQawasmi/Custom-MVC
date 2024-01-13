@@ -33,6 +33,6 @@ class ErrorHandler{
         throw  $exception;
 
         ini_set('log_errors',true);
-        // ini_set('error_log', dirname(__DIR__, 3).'/php_errors.log');
+        ini_set('error_log', dirname(__DIR__, 3).'/php_errors.log');
      }
 }

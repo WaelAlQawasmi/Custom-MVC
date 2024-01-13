@@ -20,10 +20,11 @@ ini_set("display_errors",$_ENV['SHOW_ERRORS']);
 //set_error_handler("Framework\Exceptions\ErrorHandler::handleError");
 
 set_exception_handler("Framework\Exceptions\ErrorHandler::exeptionHandler");
-
+ini_set('log_errors',true);
+ini_set('error_log','./php_errors.log');
 
 $router= require ROOT_PATH . "/config/routes.php";
 $container= require  ROOT_PATH . "/config/services.php";
-
+$request=  Framework\Request::createGlobalForm();
 $dispatcher = new Framework\Dispatcher($router, $container);
 $dispatcher->handle($request);
