@@ -1,6 +1,6 @@
 # Use an official PHP runtime as a base image
 FROM php:7.4-apache
-
+RUN a2enmod rewrite
 # Set the working directory to /var/www/html
 WORKDIR /var/www/html
 

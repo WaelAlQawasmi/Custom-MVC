@@ -12,14 +12,11 @@ services:
   www:
     depends_on:
       - db
-    image: php:7.4.7-apache
-    build : .
-    working_dir: /var/www/html
-    command: ["apache2-foreground"]
+    image: ward-framework
     volumes:
       - "./:/var/www/html"
     ports:
-      - 8083:80
+      - 8080:80
     networks:
       - lamp-docker
   phpmyadmin:
