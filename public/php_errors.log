@@ -1,0 +1,179 @@
+[15-Jan-2024 12:02:44 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/public/index.php:1) in /var/www/html/public/index.php on line 30
+[15-Jan-2024 12:02:44 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/public/index.php:1) in /var/www/html/public/index.php on line 31
+[16-Jan-2024 04:30:06 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:30:06 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:30:06 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:33:31 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:33:31 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:33:31 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Framework\Response::setBody() must be of the type string, null given, called in C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php on line 15 and defined in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php:6
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php(15): Framework\Response->setBody(NULL)
+#1 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(32): App\Controllers\Prodacts->index()
+#2 C:\Apache\htdocs\CustomMVC\public\index.php(33): Framework\Dispatcher->handle(Object(Framework\Request))
+#3 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php on line 6
+[16-Jan-2024 04:33:33 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:33:33 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:33:33 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Framework\Response::setBody() must be of the type string, null given, called in C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php on line 15 and defined in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php:6
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php(15): Framework\Response->setBody(NULL)
+#1 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(32): App\Controllers\Prodacts->index()
+#2 C:\Apache\htdocs\CustomMVC\public\index.php(33): Framework\Dispatcher->handle(Object(Framework\Request))
+#3 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php on line 6
+[16-Jan-2024 04:33:38 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:33:38 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:33:38 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Framework\Response::setBody() must be of the type string, null given, called in C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php on line 15 and defined in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php:6
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php(15): Framework\Response->setBody(NULL)
+#1 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(32): App\Controllers\Prodacts->index()
+#2 C:\Apache\htdocs\CustomMVC\public\index.php(33): Framework\Dispatcher->handle(Object(Framework\Request))
+#3 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php on line 6
+[16-Jan-2024 04:34:06 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:34:06 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:34:06 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Framework\Response::setBody() must be of the type string, null given, called in C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php on line 15 and defined in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php:6
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php(15): Framework\Response->setBody(NULL)
+#1 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(32): App\Controllers\Prodacts->index()
+#2 C:\Apache\htdocs\CustomMVC\public\index.php(33): Framework\Dispatcher->handle(Object(Framework\Request))
+#3 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php on line 6
+[16-Jan-2024 04:35:41 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:35:41 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 11
+[16-Jan-2024 04:35:41 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 12
+[16-Jan-2024 04:35:58 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:35:58 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:36:46 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:36:46 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:37:27 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:37:27 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:37:29 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:37:29 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:37:42 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:37:42 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:37:42 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 1
+[16-Jan-2024 04:37:42 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[16-Jan-2024 04:37:44 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:37:44 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:37:44 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(9) : eval()'d code on line 1
+[16-Jan-2024 04:37:44 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[16-Jan-2024 04:37:57 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:37:57 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:37:57 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Framework\Response::setBody() must be of the type string, null given, called in C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php on line 15 and defined in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php:6
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php(15): Framework\Response->setBody(NULL)
+#1 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(32): App\Controllers\Prodacts->index()
+#2 C:\Apache\htdocs\CustomMVC\public\index.php(33): Framework\Dispatcher->handle(Object(Framework\Request))
+#3 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php on line 6
+[16-Jan-2024 04:38:22 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:38:22 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:38:22 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Framework\Response::setBody() must be of the type string, null given, called in C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php on line 15 and defined in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php:6
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php(15): Framework\Response->setBody(NULL)
+#1 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(32): App\Controllers\Prodacts->index()
+#2 C:\Apache\htdocs\CustomMVC\public\index.php(33): Framework\Dispatcher->handle(Object(Framework\Request))
+#3 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php on line 6
+[16-Jan-2024 04:38:23 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:38:23 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:38:23 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Framework\Response::setBody() must be of the type string, null given, called in C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php on line 15 and defined in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php:6
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php(15): Framework\Response->setBody(NULL)
+#1 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(32): App\Controllers\Prodacts->index()
+#2 C:\Apache\htdocs\CustomMVC\public\index.php(33): Framework\Dispatcher->handle(Object(Framework\Request))
+#3 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Response.php on line 6
+[16-Jan-2024 04:41:19 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:41:19 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:19 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:41:21 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:41:21 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:41:21 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:30 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:42:30 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:30 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:44 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:42:44 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:42:44 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:45:50 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:45:50 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 11
+[16-Jan-2024 04:45:50 UTC] PHP Warning:  Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP) in C:\Apache\htdocs\CustomMVC\src\Framework\WARDTemplateViewer.php(10) : eval()'d code on line 12

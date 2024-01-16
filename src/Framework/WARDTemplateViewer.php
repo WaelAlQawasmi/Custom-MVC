@@ -6,7 +6,10 @@ class WARDTemplateViewer implements TemplateViewerInterface {
         extract($params, EXTR_SKIP);
         $code=file_get_contents(dirname(__DIR__, 2) .'/Views/'.$template.'.ward.php');
         $code= $this->replaceVariables($code);
-        eval(" ?> $code" );
+        ob_start();
+       eval( "?> $code" );
+       return ob_get_clean();
+        return $code;
        // require_once dirname(__DIR__, 2) . '/Views/'.$template.'.ward.php';
     }
 
