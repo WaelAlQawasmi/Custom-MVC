@@ -12,10 +12,12 @@ class Prodacts extends controller {
   }
 
   public function index (){
-    $this->viewer->render('header',['titel'=>'new prodact']);
-
+    $this->response->setBody($this->viewer->render('header',['titel'=>'new prodact']));
+    
+    $this->response->send();
     $Prodacts=$this->prodact->findAll();
-    $this->viewer->render('Prodacts',['Prodacts'=>$Prodacts]);
+    $this->response->setBody($this->viewer->render('Prodacts',['Prodacts'=>$Prodacts]));
+    $this->response->send();
   }
   public function show (string $id){
     $prodact=$this->prodact->find($id);
