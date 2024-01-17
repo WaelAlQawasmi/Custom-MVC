@@ -18,4 +18,14 @@ abstract class controller {
         $this->viewer=$viewer;
 
     }
+
+    protected function view( string $template, Array $data=[]) :Response{
+        $this->response->setBody($this->viewer->render($template,$data));
+        return $this->response;
+    }
+
+    protected function redirect(string $url) :Response{
+        $this->response->redirect($url);
+       return $this->response;
+    }
 }
