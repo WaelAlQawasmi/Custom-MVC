@@ -30,4 +30,5 @@ $dispatcher = new Framework\Dispatcher($router, $container);
 header("Content-Security-Policy: form-action 'self'");
 header("Content-Security-Policy: default-src 'self'; script-src 'self' ; style-src 'self' 'unsafe-inline'; form-action 'self' ");
 
-$dispatcher->handle($request);
+$response=$dispatcher->handle($request);
+$response->send();

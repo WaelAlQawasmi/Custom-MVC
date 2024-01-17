@@ -3,6 +3,7 @@ namespace App\Controllers;
 use App\Models\Prodact;
 use COM;
 use Framework\controller;
+use Framework\Response;
 use Framework\Viewer;
 class Prodacts extends controller {
  
@@ -11,48 +12,48 @@ class Prodacts extends controller {
     $this->prodact=$prodact;
   }
 
-  public function index (){
+  public function index ():Response {
     $this->response->setBody($this->viewer->render('header',['titel'=>'new prodact']));
     
     $this->response->send();
     $Prodacts=$this->prodact->findAll();
-    $this->response->setBody($this->viewer->render('Prodacts',['Prodacts'=>$Prodacts]));
-    $this->response->send();
+    return $this->view('Prodacts',['Prodacts'=>$Prodacts]);
   }
-  public function show (string $id){
+  public function show (string $id) : Response{
     $prodact=$this->prodact->find($id);
-    $this->viewer->render('Prodact',['prodact'=>$prodact]);
+    return $this->view('Prodact',['prodact'=>$prodact]);
   }
   public function new(){
-    $this->viewer->render('header',['titel'=>'new prodact']);
-    $this->viewer->render('new');
+    return $this->view('new');
+
   }
 
-  public function create(){
+  public function create():Response{
     $data=['name'=>$this->request->post['name']];
     if( $this->prodact->insert($data)){
       header("Location: {$this->prodact->getLastInsertedId()}/show");
       echo "data inserted successfully with ID {$this->prodact->getLastInsertedId()}";
+      $this->response->setStatusCode(201);
+      return $this->show($this->prodact->getLastInsertedId());
 
     }
     else{
       $this->viewer->render('header',['titel'=>'new prodact', 'errors'=>$this->prodact->getErrors()]);
-      $this->viewer->render('new');
+      return $this->new();
     }
    
   }
-  public function update(string $id){
+  public function update(string $id):Response{
     $prodact=$this->prodact->find($id);
     $data=['name'=>$this->request->post['name']];
     $this->prodact->update( $data ,$id);
-    header("Location: show");
-
-
+    return $this->show($id);
   }
-  public function edit(string $id){
+  public function edit(string $id):Response{
     $this->viewer->render('header',['titel'=>'new prodact']);
     $prodact=$this->prodact->find($id);
-    $this->viewer->render('new',['prodact'=>$prodact]);
+    return $this->view('new',['prodact'=>$prodact]);
+
 
 
   }
