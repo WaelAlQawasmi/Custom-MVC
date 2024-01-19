@@ -6,13 +6,18 @@ use Framework\RequestHandlerInterface;
 use Framework\Response;
 use Framework\MiddlewareInterface;
 
-class ChangeResponse implements MiddlewareInterface{
+class Authentication implements MiddlewareInterface {
 
     public function process(Request $request ,RequestHandlerInterface $next): Response{
+        if (!isset($_SESSION['user'])) {
+            $response = new Response($request);
+            $response->redirect("./login");
+            return  $response;
+        }
         $response= $next->handle($request);
-        if ($response->getBody() !== null)
-            $response->setBody($response->getBody() ."</br>HI FROM MIDDELWARE");
         return $response;
 
     }
+
+
 }

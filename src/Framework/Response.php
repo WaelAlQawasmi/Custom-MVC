@@ -15,7 +15,7 @@ class Response {
     }
 
     public function getBody(){
-        return $this->body ;
+        return  isset($this->body)? $this->body :null;
     }
     public function send (){
         if($this->status_code !=0 ){
@@ -24,10 +24,11 @@ class Response {
         foreach($this->headers as $header ){
             header($header);
         }
-        echo $this->body;
+        echo isset($this->body)? $this->body : "you will redirect shortly...";
+        
     }
 
     public function redirect(string $url){ 
-        $this->AddHeader("Location : $url");
+        $this->AddHeader("Location: $url");
     }
 }

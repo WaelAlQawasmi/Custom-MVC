@@ -32,8 +32,9 @@ class Dispatcher {
       $args = $this->getActionArguments($controller, $action, $pathParameters); 
       $controllerHandler=new ControllerRequestHandler  ($controllerObject,$action,$args); 
       $middleware = $this->getMiddleWare($pathParameters);
+      $middlewareHandler=new MiddlewareRequestHandler($controllerHandler,$middleware);
       
-     return $controllerHandler->handle($request);
+      return $middlewareHandler->handle($request);
    }
 
    private  function getController ($pathParameters)
@@ -57,8 +58,12 @@ class Dispatcher {
       if(!array_key_exists('middleware', $pathParameters))
       return   [] ;
       $middleware=explode('|', $pathParameters['middleware']);
-      array_walk($middleware ,function (&$Value){  $Value=$this->container->get($this->middlewareClass[$Value]);});
-    
+      array_walk($middleware , function (&$Value){
+               if( !array_key_exists($Value, $this->middlewareClass))
+                  throw new UnexpectedValueException("middleware $Value  undefined");
+               $Value=$this->container->get($this->middlewareClass[$Value]);
+            }
+         );
       return $middleware;
    }
 
