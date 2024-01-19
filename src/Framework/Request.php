@@ -2,7 +2,7 @@
 namespace Framework;
 class Request {
     public $uri, $method , $get, $post,$files,$cookie,$server;
-    public function __construct ($uri , $method  , $get, $post,$files,$cookie,$server){
+    public function __construct (string $uri ,string $method  , array $get,array $post,array $files,array $cookie,array $server){
         $this->uri = $uri;
         $this->method=$method;
         $this->get = $get;

@@ -12,8 +12,7 @@ class ControllerRequestHandler implements RequestHandlerInterface {
     }
     public function handle( Request $request) :Response {
         $this->controller->setRequest( $request) ;
-
-        return $this->controller-> $this->action(...array_values($this->arguments));
+        return $this->controller-> {$this->action}(...array_values($this->arguments));
     }
  
 }

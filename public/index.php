@@ -25,8 +25,12 @@ ini_set('error_log','./php_errors.log');
 
 $router= require ROOT_PATH . "/config/routes.php";
 $container= require  ROOT_PATH . "/config/services.php";
+$middlewares= require  ROOT_PATH . "/config/Middlewares.php";
 $request=  Framework\Request::createGlobalForm();
-$dispatcher = new Framework\Dispatcher($router, $container);
+
+
+
+$dispatcher = new Framework\Dispatcher($router, $container,$middlewares);
 header("Content-Security-Policy: form-action 'self'");
 header("Content-Security-Policy: default-src 'self'; script-src 'self' ; style-src 'self' 'unsafe-inline'; form-action 'self' ");
 

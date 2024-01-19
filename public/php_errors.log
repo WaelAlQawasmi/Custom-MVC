@@ -324,3 +324,100 @@ Stack trace:
 [17-Jan-2024 05:24:50 UTC] PHP Notice:  Undefined index: name in C:\Apache\htdocs\CustomMVC\src\App\Controllers\Prodacts.php on line 32
 [17-Jan-2024 05:25:54 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
 [17-Jan-2024 05:25:54 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:07:43 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Framework\Dispatcher::__construct(), 2 passed in C:\Apache\htdocs\CustomMVC\public\index.php on line 29 and exactly 3 expected in C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php:12
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\public\index.php(29): Framework\Dispatcher->__construct(Object(Framework\Router), Object(Framework\Container))
+#1 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php on line 12
+[19-Jan-2024 09:13:18 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Framework\Dispatcher::__construct(), 2 passed in C:\Apache\htdocs\CustomMVC\public\index.php on line 29 and exactly 3 expected in C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php:12
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\public\index.php(29): Framework\Dispatcher->__construct(Object(Framework\Router), Object(Framework\Container))
+#1 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php on line 12
+[19-Jan-2024 09:13:20 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Framework\Dispatcher::__construct(), 2 passed in C:\Apache\htdocs\CustomMVC\public\index.php on line 29 and exactly 3 expected in C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php:12
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\public\index.php(29): Framework\Dispatcher->__construct(Object(Framework\Router), Object(Framework\Container))
+#1 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php on line 12
+[19-Jan-2024 09:14:27 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:14:27 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:14:31 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:14:31 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:14:45 UTC] PHP Warning:  require(C:\Apache\htdocs\CustomMVC/src/App/Controllers/1.php): failed to open stream: No such file or directory in C:\Apache\htdocs\CustomMVC\public\index.php on line 11
+[19-Jan-2024 09:14:45 UTC] PHP Fatal error:  require(): Failed opening required 'C:\Apache\htdocs\CustomMVC/src/App/Controllers/1.php' (include_path='.;C:\php74\includes') in C:\Apache\htdocs\CustomMVC\public\index.php on line 11
+[19-Jan-2024 09:14:49 UTC] PHP Warning:  require(C:\Apache\htdocs\CustomMVC/src/App/Controllers/1.php): failed to open stream: No such file or directory in C:\Apache\htdocs\CustomMVC\public\index.php on line 11
+[19-Jan-2024 09:14:49 UTC] PHP Fatal error:  require(): Failed opening required 'C:\Apache\htdocs\CustomMVC/src/App/Controllers/1.php' (include_path='.;C:\php74\includes') in C:\Apache\htdocs\CustomMVC\public\index.php on line 11
+[19-Jan-2024 09:15:06 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:15:06 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:15:30 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:15:30 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:16:01 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:16:01 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:27:09 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:27:09 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:27:09 UTC] PHP Notice:  Only variables should be passed by reference in C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php on line 57
+[19-Jan-2024 09:27:09 UTC] PHP Fatal error:  Uncaught TypeError: Return value of Framework\Dispatcher::getMiddleWare() must be of the type array, bool returned in C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php:57
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(34): Framework\Dispatcher->getMiddleWare(Array)
+#1 C:\Apache\htdocs\CustomMVC\public\index.php(37): Framework\Dispatcher->handle(Object(Framework\Request))
+#2 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php on line 57
+[19-Jan-2024 09:29:46 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:29:46 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:29:46 UTC] PHP Fatal error:  Uncaught Error: Object of class Framework\ControllerRequestHandler could not be converted to string in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php:16
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(36): Framework\ControllerRequestHandler->handle(Object(Framework\Request))
+#1 C:\Apache\htdocs\CustomMVC\public\index.php(37): Framework\Dispatcher->handle(Object(Framework\Request))
+#2 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php on line 16
+[19-Jan-2024 09:35:43 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:35:43 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:38:04 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:38:04 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:38:04 UTC] PHP Fatal error:  Uncaught Error: Object of class Framework\ControllerRequestHandler could not be converted to string in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php:16
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(36): Framework\ControllerRequestHandler->handle(Object(Framework\Request))
+#1 C:\Apache\htdocs\CustomMVC\public\index.php(37): Framework\Dispatcher->handle(Object(Framework\Request))
+#2 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php on line 16
+[19-Jan-2024 09:39:11 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:39:11 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:39:11 UTC] PHP Notice:  Array to string conversion in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php on line 15
+[19-Jan-2024 09:39:28 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:39:28 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:41:09 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:41:09 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:41:09 UTC] PHP Fatal error:  Uncaught Error: Object of class Framework\ControllerRequestHandler could not be converted to string in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php:16
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(36): Framework\ControllerRequestHandler->handle(Object(Framework\Request))
+#1 C:\Apache\htdocs\CustomMVC\public\index.php(37): Framework\Dispatcher->handle(Object(Framework\Request))
+#2 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php on line 16
+[19-Jan-2024 09:42:08 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:42:08 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:42:08 UTC] PHP Fatal error:  Uncaught Error: Object of class App\Controllers\Prodacts could not be converted to string in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php:15
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(36): Framework\ControllerRequestHandler->handle(Object(Framework\Request))
+#1 C:\Apache\htdocs\CustomMVC\public\index.php(37): Framework\Dispatcher->handle(Object(Framework\Request))
+#2 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php on line 15
+[19-Jan-2024 09:42:09 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:42:09 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:42:09 UTC] PHP Fatal error:  Uncaught Error: Object of class App\Controllers\Prodacts could not be converted to string in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php:15
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(36): Framework\ControllerRequestHandler->handle(Object(Framework\Request))
+#1 C:\Apache\htdocs\CustomMVC\public\index.php(37): Framework\Dispatcher->handle(Object(Framework\Request))
+#2 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php on line 15
+[19-Jan-2024 09:42:31 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:42:31 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:42:31 UTC] PHP Fatal error:  Uncaught Error: Object of class Framework\ControllerRequestHandler could not be converted to string in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php:17
+Stack trace:
+#0 C:\Apache\htdocs\CustomMVC\src\Framework\Dispatcher.php(36): Framework\ControllerRequestHandler->handle(Object(Framework\Request))
+#1 C:\Apache\htdocs\CustomMVC\public\index.php(37): Framework\Dispatcher->handle(Object(Framework\Request))
+#2 {main}
+  thrown in C:\Apache\htdocs\CustomMVC\src\Framework\ControllerRequestHandler.php on line 17
+[19-Jan-2024 09:43:28 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:43:28 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:43:41 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30
+[19-Jan-2024 09:43:41 UTC] PHP Deprecated:  Function ReflectionType::__toString() is deprecated in C:\Apache\htdocs\CustomMVC\src\Framework\Container.php on line 30

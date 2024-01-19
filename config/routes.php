@@ -4,7 +4,7 @@ $router->add('/prodacts',['controller' => 'prodacts', 'action' =>'index']);
 $router->add('/home/contactus',['controller' => 'home', 'action' =>'contactus']);
 $router->add('/',['controller' => 'home', 'action' =>'index']);
 //$router->add("/{controller}/{id:\d+}/{action}");
-$router->add("/{controller}/{id:\d+}/show",array('action' =>'show', 'method'=>'GET'));
+$router->add("/{controller}/{id:\d+}/show",array('action' =>'show', 'method'=>'GET', 'middleware'=>'changeResponse|changeResponse'));
 $router->add("/{controller}/{id:\d+}/edit",array('action' =>'edit', 'method'=>'GET'));
 $router->add("/{controller}/create",array('action' =>'create', 'method'=>'POST'));
 $router->add("/{controller}/{id:\d+}/update",array('action' =>'update', 'method'=>'POST'));
