@@ -31,8 +31,8 @@ $request=  Framework\Request::createGlobalForm();
 
 
 $dispatcher = new Framework\Dispatcher($router, $container,$middlewares);
-header("Content-Security-Policy: form-action 'self'");
-header("Content-Security-Policy: default-src 'self'; script-src 'self' ; style-src 'self' 'unsafe-inline'; form-action 'self' ");
+//header("Content-Security-Policy: form-action 'self'");
+//header("Content-Security-Policy: default-src 'self'; script-src 'self' ; style-src 'self' 'unsafe-inline'; form-action 'self' ");
 
 $response=$dispatcher->handle($request);
 $response->send();

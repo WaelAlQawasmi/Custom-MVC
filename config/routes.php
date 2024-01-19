@@ -4,9 +4,11 @@ $router->add('/prodacts',['controller' => 'prodacts', 'action' =>'index']);
 $router->add('/home/contactus',['controller' => 'home', 'action' =>'contactus']);
 $router->add('/',['controller' => 'home', 'action' =>'index']);
 //$router->add("/{controller}/{id:\d+}/{action}");
-$router->add("/{controller}/{id:\d+}/show",array('action' =>'show', 'method'=>'GET', 'middleware'=>'changeResponse|changeResponse'));
+$router->add("/{controller}/{id:\d+}/show",array('action' =>'show', 'method'=>'GET', 'middleware'=>'changeResponse|Authentication'));
 $router->add("/{controller}/{id:\d+}/edit",array('action' =>'edit', 'method'=>'GET'));
 $router->add("/{controller}/create",array('action' =>'create', 'method'=>'POST'));
+$router->add("/{controller}/",array('action' =>'index'));
+$router->add("/home/login",array('action' =>'login','controller' => 'home'));
 $router->add("/{controller}/{id:\d+}/update",array('action' =>'update', 'method'=>'POST'));
 
 $router->add("/admin/{controller}/{action}", ["namespace" => "Admin"]);
