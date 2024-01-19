@@ -8,10 +8,12 @@ use UnexpectedValueException;
 class Dispatcher {
    public $router;
    public $container;
-   public function __construct( Router $router, Container $container)
+   private $middlewareClass;
+   public function __construct( Router $router, Container $container,  array $middlewareClass)
    {
       $this->router= $router;
       $this->container= $container;
+      $this->middlewareClass= $middlewareClass;
 
    }
 
@@ -24,12 +26,13 @@ class Dispatcher {
          throw new PageNotFoundException("$path is not a valid");
       $controller=$this->getController($pathParameters);
       $controllerObject = $this->container->get($controller);
-      $controllerObject->setRequest( $request) ;
       $controllerObject->setResponse( new Response()) ;
       $controllerObject->setViewer( $this->container->get(TemplateViewerInterface::class));
       $action=$this->getAction($pathParameters);
       $args = $this->getActionArguments($controller, $action, $pathParameters); 
-      $controllerHandler=new ControllerRequestHandler  ($controllerObject,$action,$args);   
+      $controllerHandler=new ControllerRequestHandler  ($controllerObject,$action,$args); 
+      $middleware = $this->getMiddleWare($pathParameters);
+      
      return $controllerHandler->handle($request);
    }
 
@@ -48,6 +51,15 @@ class Dispatcher {
       $action = $pathParameters["action"]; 
       $action = str_replace("-", "", ucwords(strtolower($action), "-"));
       return lcfirst($action);
+   }
+
+   private function getMiddleWare( array $pathParameters) :array{
+      if(!array_key_exists('middleware', $pathParameters))
+      return   [] ;
+      $middleware=explode('|', $pathParameters['middleware']);
+      array_walk($middleware ,function (&$Value){  $Value=$this->container->get($this->middlewareClass[$Value]);});
+    
+      return $middleware;
    }
 
 
