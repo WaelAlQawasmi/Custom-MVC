@@ -107,4 +107,6 @@ abstract class Model {
  public function getErrors(){
    return $this->errors;
  }
+
+ 
 }
