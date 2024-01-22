@@ -108,5 +108,30 @@ abstract class Model {
    return $this->errors;
  }
 
- 
+
+ public function selectAll(array  $columns , array $conditions , array $logics , array $sprators ) {
+    $selectedcolumns= implode(',',$columns );
+    $query = "SELECT $selectedcolumns FROM {$this->getTableName()}";
+    $query.=" where ";
+    $i =0;
+    foreach ($conditions as $column =>$value){
+      $query.="  $column $logics[$i] ? ";
+      if (array_key_exists( $i, $sprators)){
+        $query.=" $sprators[$i]  ";
+      }
+      $i++;
+    }
+    $query.=" ; ";
+    $i =1;
+    $conn= $this->dataBase->getConnection();
+    $stmt= $conn->prepare($query);
+    foreach ($conditions as $column =>$value){
+      $stmt->bindValue($i++, $value, PDO::PARAM_STR);
+    }
+
+  $stmt->execute();
+  return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
 }
