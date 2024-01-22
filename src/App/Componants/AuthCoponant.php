@@ -2,7 +2,7 @@
 namespace Components;
 class AuthComponent {
 
-    public function isStrongPassword($password) {
+    public static function isStrongPassword($password) {
         // Minimum length
         $minLength = 8;
     

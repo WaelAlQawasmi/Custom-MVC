@@ -13,7 +13,8 @@ class Prodacts extends controller {
   }
 
   public function index ():Response {
-    $this->response->setBody($this->viewer->render('header',['titel'=>'new prodact']));
+    //$Prodacts=$this->prodact->selectAll(['name','description'],['name'=>'500', 'description'=>'300'],['=','='],['and']);
+    $this->response->setBody($this->viewer->render('header',['titel'=>'new prodact'])); 
     
     $this->response->send();
     $Prodacts=$this->prodact->findAll();
