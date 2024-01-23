@@ -13,7 +13,9 @@ class Prodacts extends controller {
   }
 
   public function index ():Response {
-    //$Prodacts=$this->prodact->selectAll(['name','description'],['name'=>'500', 'description'=>'300'],['=','='],['and']);
+    //$Prodacts=$this->prodact->selectFirst(['name','description'],['name'=>'500', 'description'=>'300'],['=','='],['and']);
+   // print_r($Prodacts);
+    //exit;
     $this->response->setBody($this->viewer->render('header',['titel'=>'new prodact'])); 
     
     $this->response->send();

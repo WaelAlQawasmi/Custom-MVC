@@ -17,6 +17,11 @@ abstract class Model {
       $this->dataBase= $dataBase;
     }
 
+  /**
+   *  function to get all data from the table
+   * @author wael Al Qawasmi <wael.alqwasmi@yahoo.com>
+   * @return array
+   */
  public function findAll(): array
  {
   $conn= $this->dataBase->getConnection();
@@ -24,7 +29,13 @@ abstract class Model {
   return $stmt->fetchAll(PDO::FETCH_ASSOC);
  }
 
- public function find(string $id){
+ /**
+  * function to fetch data based on id attribute
+  *  @author wael Al Qawasmi <wael.alqwasmi@yahoo.com>
+   * @return array
+  */
+
+ public function find(string $id) :array { 
     $conn= $this->dataBase->getConnection();
     $sql="SELECT * FROM {$this->getTableName()} where id = :id";
     $stmt= $conn->prepare($sql);
@@ -36,6 +47,12 @@ abstract class Model {
     return  $data;
  }
 
+ /**
+  *  function to insert a new data into the table
+  * @author wael Al Qawasmi <wael.alqwasmi@yahoo.com>
+  * @param array $data Associative array keys the column names and values is the values to insert into the table
+  * @return void
+  */
  public function insert(array $data){
     $this->validation($data);
     if(!empty($this->errors )){
@@ -54,6 +71,7 @@ abstract class Model {
     return $stmt->execute();
  }
 
+ 
  public function update(array $data, string $id)
  {
     $this->validation($data);
@@ -110,27 +128,50 @@ abstract class Model {
 
 
  public function selectAll(array  $columns , array $conditions , array $logics , array $sprators ) {
-    $selectedcolumns= implode(',',$columns );
-    $query = "SELECT $selectedcolumns FROM {$this->getTableName()}";
-    $query.=" where ";
-    $i =0;
-    foreach ($conditions as $column =>$value){
-      $query.="  $column $logics[$i] ? ";
-      if (array_key_exists( $i, $sprators)){
-        $query.=" $sprators[$i]  ";
-      }
-      $i++;
+    if (count($conditions) != count($logics) || count($sprators)>= count($conditions)){
+      throw new \InvalidArgumentException(" invalid conditions");
     }
-    $query.=" ; ";
-    $i =1;
-    $conn= $this->dataBase->getConnection();
-    $stmt= $conn->prepare($query);
-    foreach ($conditions as $column =>$value){
-      $stmt->bindValue($i++, $value, PDO::PARAM_STR);
-    }
+    $query= $this->prepareSelectQuery($columns,$conditions,$logics,$sprators);
+    
+  return $this->bindSelectQuery($conditions,$query)->fetchAll(PDO::FETCH_ASSOC);
+}
 
-  $stmt->execute();
-  return $stmt->fetchAll(PDO::FETCH_ASSOC);
+public function selectFirst(array  $columns , array $conditions , array $logics , array $sprators ) {
+    if (count($conditions) != count($logics) || count($sprators)>= count($conditions)){
+      throw new \InvalidArgumentException(" invalid conditions");
+    }
+    $query= $this->prepareSelectQuery($columns,$conditions,$logics,$sprators);
+    
+  return $this->bindSelectQuery($conditions,$query)->fetch(PDO::FETCH_ASSOC);
+}
+
+
+private function prepareSelectQuery(array $columns , array $conditions , array $logics , array $sprators){
+  $selectedcolumns= implode(',',$columns );
+  $query = "SELECT $selectedcolumns FROM {$this->getTableName()}";
+  $query.=" where ";
+  $i =0;
+  foreach ($conditions as $column =>$value){
+    $query.="  $column $logics[$i] ? ";
+    if (array_key_exists( $i, $sprators)){
+      $query.=" $sprators[$i]  ";
+    }
+    $i++;
+  }
+  $query.=" ; ";
+  return $query;
+
+}
+
+private function bindSelectQuery(array $conditions ,string $query){
+  $i =1;
+  $conn= $this->dataBase->getConnection();
+  $stmt= $conn->prepare($query);
+  foreach ($conditions as $column =>$value){
+    $stmt->bindValue($i++, $value, PDO::PARAM_STR);
+  }
+   $stmt->execute();
+   return $stmt;
 }
 
 
